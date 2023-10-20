@@ -21,6 +21,28 @@ int main(int argc, const char * argv[]) {
         Figure *rectangle = [[Rectangle alloc] initRectangle: 2 sideB:4];
         
         [rectangle informationAboutFigure];
+        
+        Figure *triangle = [[Triangle alloc] initTriangle: 3 sideB:4 sideC:5];
+        
+        [triangle informationAboutFigure];
+        
+        Figure *circle = [[Circle alloc] initCircle:5];
+        
+        [circle informationAboutFigure];
+        
+        NSMutableArray *myArray = [NSMutableArray array];
+        
+        
+        [myArray addObject: rectangle];
+        [myArray addObject: triangle];
+        [myArray addObject: circle];
+        
+        for(id object in myArray){
+            [object informationAboutFigure];
+        }
+            
+            
     }
     return 0;
 }
+
