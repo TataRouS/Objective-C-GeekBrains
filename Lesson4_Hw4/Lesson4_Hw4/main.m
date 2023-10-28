@@ -8,11 +8,38 @@
 //Продемонстрировать движение робота по прямоугольной системе координат.
 
 #import <Foundation/Foundation.h>
+#import "Robot.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+       
+        NSString *(^up)(void) = ^NSString *(void){
+            return @"up";
+        };
+        
+        NSString *(^down)(void) = ^NSString *(void){
+            return @"down";
+        };
+        
+        NSString *(^left)(void) = ^NSString *(void){
+            return @"left";
+        };
+        
+        NSString *(^right)(void) = ^NSString *(void){
+            return @"right";
+        };
+        
+        
+        NSLog(@"Пример пути %@, %@, %@, %@", up(), up(), up(), right());
+        Robot *newObject = [Robot new];
+        
+        [newObject Run:up];
+        [newObject Run:left];
+        [newObject Run:up];
+        [newObject Run:up];
+        [newObject Run:right];
+        [newObject Run:right];
+        [newObject Run:right];
     }
     return 0;
 }

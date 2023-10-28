@@ -9,18 +9,31 @@
 
 @implementation Robot
 
--(void) Run: (NSString*(^)(NSString*)) block {
+-(void) Run: (NSString*(^)(void)) block {
     
-    MyType step = block;
-    NSString *up = @"up";
-    NSString *down = @"down";
-    NSString *left = @"left";
-    NSString *right = @"right";
+    NSString *way = block();
     
-    if ([ isEqualToString: up]) {
-        // false
+    if ([way isEqualToString: @"up"]) {
+        y=y + 1;
+        NSLog(@"Координата Х: %i", x);
+        NSLog(@"Координата Y: %i", y);
+        return;
+    }else if ([way isEqualToString: @"down"]){
+        y=y - 1;
+        NSLog(@"Координата Х: %i", x);
+        NSLog(@"Координата Y: %i", y);
+        return;
+    }else if ([way isEqualToString: @"left"]){
+        x=x - 1;
+        NSLog(@"Координата Х: %i", x);
+        NSLog(@"Координата Y: %i", y);
+        return;
+    }else if ([way isEqualToString: @"right"]){
+        x=x + 1;
+        NSLog(@"Координата Х: %i", x);
+        NSLog(@"Координата Y: %i", y);
+        return;
     }
-    
 }
 
 @end

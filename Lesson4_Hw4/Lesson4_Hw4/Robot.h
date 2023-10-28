@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NSString * (^MyType)(NSString *);
+typedef NSString * (^MyType)(void);
 
 @interface Robot : NSObject
 
@@ -18,10 +18,10 @@ typedef NSString * (^MyType)(NSString *);
     NSInteger y;
 };
 
-@property (nonatomic, nullable) NSString* (^moveBlock)(NSString*);
+@property (nonatomic, nullable) NSString* (^moveBlock)(void);
 
 
--(void) Run: (NSString*(^)(NSString*)) block;
+-(void) Run: (NSString*(^)(void)) block;
 
 
 @end
